@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Login</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #e8eff1;
+            margin: 0;
+            color: #333;
+        }
+
+        .sign-in-container {
+            background: #ffffff;
+            padding: 40px 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .sign-in-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+            color: #0a3d62;
+        }
+
+        .sign-in-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sign-in-container input {
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #ced6e0;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .sign-in-container button {
+            padding: 15px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .sign-in-container button:hover {
+            background-color: #27ae60;
+        }
+
+        /* Additional styles for the login button */
+        .sign-in-container form .login-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+            padding: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .sign-in-container form .login-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Additional styles for the register link */
+        .register-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .register-link a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="sign-in-container">
+    <h2>User Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="id_username">Username:</label>
+        <input type="text" name="username" id="id_username">
+        <label for="id_password">Password:</label>
+        <input type="password" name="password" id="id_password">
+        <button type="submit" class="login-button">Log In</button>
+    </form>
+    <div class="register-link">
+        <p>Don't have an account? <a href="/accounts/login/">Reggister here</a>.</p>
+    </div>
+</div>
+
+</body>
+</html>
